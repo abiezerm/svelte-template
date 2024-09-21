@@ -1,0 +1,8 @@
+{
+    "signUp": "Inscribirse",
+    "username": "Nombre de Usuario",
+    "email": "Email",
+    "password": "Contraseña",
+    "passwordRepeat": "Repetir Contraseña",
+    "passwordMismatchValidation": "Las contraseñas no coinciden"
+}
