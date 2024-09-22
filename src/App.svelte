@@ -1,8 +1,8 @@
 <script lang="ts">
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
   import { _ } from "svelte-i18n";
+  import { Link, Router, Route, links } from "svelte-routing";
   import "./locale/i18n";
 
   import SignUpPage from './pages/SignUpPage.svelte';
@@ -15,26 +15,48 @@
   
 </script>
 
-<div class="container">
-  <div>
-    <a href="/" title="Home">Home</a>
-    <a href="/signup">{$_("signUp")}</a>
-    <a href="/login">Login</a>
+<Router>
+  <div class="bg-light">
+    <nav class="container navbar navbar-expand navbar-light">
+      <div class="container-fluid" use:links>
+        <a href="/" title="Home"  class="navbar-brand">
+          <img src={viteLogo} alt="Home" width="30" height="24" class="d-inline-block align-text-top" />
+          Home
+        </a>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a  class="nav-link" href="/signup">{$_("signUp")}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav> 
   </div>
-  {#if path === "/"}
-    <HomePage />
-  {:else if path === "/signup"}
-    <SignUpPage />
-  {:else if path === "/login"}
-    <LoginPage />
-  {:else if path.startsWith("/user")}
-    <UserPage />
-  {/if}
+  
+  <div class="container">
+    <Route path="/">
+      <HomePage />
+    </Route>
 
-  <!-- <SignUpPage /> -->
-  <LanguageSelector />
+    <Route path="/signup" >
+      <SignUpPage />
+    </Route>
+  
+    <Route path="/login" >
+      <LoginPage />
+    </Route>
 
-</div>
+    <Route path="/user/:id" >
+      <UserPage />
+    </Route>
+    <!-- <SignUpPage /> -->
+    <LanguageSelector />
+  </div>
+</Router>
+
+
 
 <!-- <main>
   <div>
