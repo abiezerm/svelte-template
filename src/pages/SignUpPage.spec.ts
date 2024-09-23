@@ -6,7 +6,7 @@ import axios from "axios";
 import SignUpPage from "./SignUpPage.svelte";
 import en from "../locale/en.json";
 import es from "../locale/es.json";
-import LanguageSelector from "../lib/LanguageSelector.svelte";
+import LanguageSelector from "../lib/components/LanguageSelector.svelte";
 import { reset } from "../locale/i18n";
 
 describe("SignUpPage", () => {
