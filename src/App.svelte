@@ -6,10 +6,11 @@
   import "./locale/i18n";
 
   import SignUpPage from './pages/SignUpPage.svelte';
-  import LanguageSelector from './lib/LanguageSelector.svelte';
+  import LanguageSelector from './lib/components/LanguageSelector.svelte';
   import HomePage from './pages/HomePage.svelte';
   import LoginPage from './pages/LoginPage.svelte';
   import UserPage from './pages/UserPage.svelte';
+  import AccountActivationPage from './pages/AccountActivationPage.svelte';
 
   let path = window.location.pathname;
   
@@ -48,8 +49,12 @@
       <LoginPage />
     </Route>
 
-    <Route path="/user/:id" >
-      <UserPage />
+    <Route path="/activate/:token" let:params >
+      <AccountActivationPage id={params.token} />
+    </Route>
+
+    <Route path="/user/:id" let:params >
+      <UserPage id={params.id} />
     </Route>
     <!-- <SignUpPage /> -->
     <LanguageSelector />

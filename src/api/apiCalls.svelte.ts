@@ -9,3 +9,7 @@ locale.subscribe((value) => {
 export const signup = (body): Promise<AxiosResponse> => {
     return axios.post("/api/1.0/users", body);
 }
+
+export const activate = (token: string): Promise<AxiosResponse> => {
+    return axios.post(`/api/1.0/users/token/${token}`);
+}

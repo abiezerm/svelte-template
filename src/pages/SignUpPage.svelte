@@ -1,7 +1,8 @@
 <script lang="ts">
     import { _ } from 'svelte-i18n';
-    import FormInput from '../lib/FormInput.svelte';
+    import FormInput from '../lib/components/FormInput.svelte';
     import { signup } from "../api/apiCalls.svelte";
+    import Spinner from '../lib/components/Spinner.svelte';
 
     let apiCall = $state<AxiosPromise | null>(null);
 
@@ -93,7 +94,7 @@
             <div class="text-center">
                 <button class="btn btn-primary" disabled={disabled || state.posting} onclick={submit}>
                     {#await apiCall}
-                        <span class="spinner-border spinner-border-sm" role="status"></span>
+                        <Spinner size="sm" />
                     {/await}
                     {$_("signUp")}
                 </button>
