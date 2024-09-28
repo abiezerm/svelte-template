@@ -4,5 +4,8 @@
     "email": "Email",
     "password": "Contraseña",
     "passwordRepeat": "Repetir Contraseña",
-    "passwordMismatchValidation": "Las contraseñas no coinciden"
+    "passwordMismatchValidation": "Las contraseñas no coinciden",
+    "users": "Usuarios",
+    "nextPage": "Siguiente >",
+    "previousPage": "< Anterior"
 }

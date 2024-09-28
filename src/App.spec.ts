@@ -113,4 +113,15 @@ describe("Routing", () => {
         expect(page).toBeInTheDocument();
 
     });
+
+    it("navigates to user page when clicking the username on user list", async () => {
+        setup("/");
+
+        const user = await screen.findByText("user-in-list");
+
+        await fireEvent.click(user!);
+        
+        expect(screen.queryByTestId("user-page")).toBeInTheDocument();
+
+    });
 });

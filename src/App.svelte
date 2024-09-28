@@ -17,7 +17,7 @@
 </script>
 
 <Router>
-  <div class="bg-light">
+  <div class="bg-light mb-3">
     <nav class="container navbar navbar-expand navbar-light">
       <div class="container-fluid" use:links>
         <a href="/" title="Home"  class="navbar-brand">
